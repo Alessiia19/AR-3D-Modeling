@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5750293511369308955
+  m_GuidHigh: 14778354822298471098
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5533240908411414195
+      m_GuidHigh: 15993962086895424665
+    m_SerializedTextureGuid:
+      m_GuidLow: 12827425695302490343
+      m_GuidHigh: 17829091840253624394
+    m_Size: {x: 0.3, y: 0.4472637}
+    m_SpecifySize: 1
+    m_Name: Monna Lisa
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5044644024585507851
+      m_GuidHigh: 9547480608687663549
+    m_SerializedTextureGuid:
+      m_GuidLow: 3887925043744686626
+      m_GuidHigh: 18389938073517761704
+    m_Size: {x: 0.3, y: 0.238}
+    m_SpecifySize: 1
+    m_Name: Notte Stellata
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5290305861754022939
+      m_GuidHigh: 1346951885274087082
+    m_SerializedTextureGuid:
+      m_GuidLow: 8017624701233299556
+      m_GuidHigh: 2606449952381768376
+    m_Size: {x: 0.3, y: 0.41287503}
+    m_SpecifySize: 1
+    m_Name: DamaConErmellino
+    m_Texture: {fileID: 0}
