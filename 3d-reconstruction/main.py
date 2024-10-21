@@ -28,6 +28,3 @@ def main(image_path):
     filename = get_image_name(image_path)
     export_mesh(mesh, filename)
 
-if __name__ == "__main__":
-    image_path = "C:\\Users\\aless\\Desktop\\DamaConErmellino.jpg" 
-    main(image_path)
