@@ -73,6 +73,3 @@ Contains python scripts responsible for 3D reconstruction:
 ## Additional Notes
 - **Blender Refinement**: The generated models can be further refined in Blender for improved quality.
 
----
-
-This README serves as an in-depth guide to understanding, installing, and running the AR museum environment project.
