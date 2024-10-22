@@ -12,7 +12,6 @@ The following are the versions of the software, libraries, and packages used dur
 - **Python**: 3.11.10
 - **PyTorch**: Version 2.4.1
 - **PyTorch Lightning**: Version 2.4.0
-- **OpenCV**: Version 4.10.0
 - **Pillow**: Version 10.4.0
 - **NumPy**: Version 1.26.4
 - **Matplotlib**: Version 3.9.2
