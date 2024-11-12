@@ -12,7 +12,6 @@ The following are the versions of the software, libraries, and packages used dur
 - **Python**: 3.11.10
 - **PyTorch**: Version 2.4.1
 - **PyTorch Lightning**: Version 2.4.0
-- **OpenCV**: Version 4.10.0
 - **Pillow**: Version 10.4.0
 - **NumPy**: Version 1.26.4
 - **Matplotlib**: Version 3.9.2
@@ -20,7 +19,6 @@ The following are the versions of the software, libraries, and packages used dur
 - **Unity**: Version 2022.3.48f1
 - **Blender**: Version 4.2.2
 - **Transformers**: Version 4.45.2
-- **Huggingface-hub**: Version 0.25.2
 
 > Note: The versions above indicate the exact versions used during the project. Compatibility with other versions has not been tested.
 
