@@ -17,11 +17,12 @@ def main(image_path):
 
     depth_map_normalized = normalize_and_rescale(predicted_depth.squeeze().cpu().numpy())
     depth_map, cropped_img = post_process_depth(depth_map_normalized, img)
-    #visualize_depth(cropped_img, depth_map)
+    visualize_depth(cropped_img, depth_map)
 
     pcd_raw = create_point_cloud(cropped_img, depth_map)
     pcd = process_point_cloud(pcd_raw)
-    
+    open3d.visualization.draw_geometries([pcd])
+
     mesh = reconstruct_mesh(pcd)
     open3d.visualization.draw_geometries([mesh], mesh_show_back_face=True)
    
