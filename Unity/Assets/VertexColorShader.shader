@@ -23,7 +23,7 @@ Shader "Custom/VertexColorShader"
             struct appdata_t
             {
                 float4 vertex : POSITION;
-                float4 color : COLOR; // Colori vertex
+                float4 color : COLOR; 
             };
 
             struct v2f
@@ -36,13 +36,13 @@ Shader "Custom/VertexColorShader"
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
-                o.color = v.color; // Passa il colore vertex al frammento
+                o.color = v.color; 
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                return i.color; // Restituisce il colore vertex
+                return i.color; 
             }
             ENDCG
         }

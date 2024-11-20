@@ -28,22 +28,22 @@ MonoBehaviour:
     m_Name: Monna Lisa
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
-      m_GuidLow: 5044644024585507851
-      m_GuidHigh: 9547480608687663549
-    m_SerializedTextureGuid:
-      m_GuidLow: 3887925043744686626
-      m_GuidHigh: 18389938073517761704
-    m_Size: {x: 0.3, y: 0.238}
-    m_SpecifySize: 1
-    m_Name: Notte Stellata
-    m_Texture: {fileID: 0}
-  - m_SerializedGuid:
       m_GuidLow: 5290305861754022939
       m_GuidHigh: 1346951885274087082
     m_SerializedTextureGuid:
       m_GuidLow: 8017624701233299556
       m_GuidHigh: 2606449952381768376
-    m_Size: {x: 0.3, y: 0.41287503}
+    m_Size: {x: 0.5, y: 0.688125}
     m_SpecifySize: 1
-    m_Name: DamaConErmellino
+    m_Name: Dama con l'Ermellino
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5665300229557810947
+      m_GuidHigh: 13391915350279316097
+    m_SerializedTextureGuid:
+      m_GuidLow: 3784318558587659841
+      m_GuidHigh: 14565957479730833400
+    m_Size: {x: 0.3, y: 0.35910225}
+    m_SpecifySize: 1
+    m_Name: Ragazza col Turbante
     m_Texture: {fileID: 0}
