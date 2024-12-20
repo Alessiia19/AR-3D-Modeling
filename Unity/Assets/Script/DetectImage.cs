@@ -7,23 +7,27 @@ using TMPro;
 public class DetectImage : MonoBehaviour
 {
     [SerializeField]
-    ARTrackedImageManager trackedImageManager;
+    ARTrackedImageManager trackedImageManager;  // Manages AR tracked images
 
     [SerializeField] 
-    private TextMeshProUGUI imageNameText;
+    private TextMeshProUGUI imageNameText;  // UI element to display the name of the detected image
 
     [SerializeField]
-    private GameObject scanCorners;
+    private GameObject scanCorners;     // UI element indicating the scanning corners
 
     [SerializeField]
-    private GameObject instructionPanel;
+    private GameObject instructionPanel;    // Panel displaying instructions
 
     [SerializeField] 
-    private GameObject[] prefabs;
+    private GameObject[] prefabs;   // Array of prefabs to instantiate for each tracked image
 
-    private Dictionary<string, GameObject> trackedImages = new Dictionary<string, GameObject>();
+    private Dictionary<string, GameObject> trackedImages = new Dictionary<string, GameObject>();    // Maps image names to their prefabs
 
+
+    // Called when the script instance is being loaded
     void Awake() {
+
+        // Initialize the tracked image manager
         trackedImageManager = GetComponent<ARTrackedImageManager>();
 
         // Instantiate prefabs at runtime and deactivate them
@@ -35,23 +39,31 @@ public class DetectImage : MonoBehaviour
         }
     }
 
+    // Called when the object becomes enabled and active
     void OnEnable() => trackedImageManager.trackedImagesChanged += OnChanged;
 
+    // Called when the object becomes disabled or inactive
     void OnDisable() => trackedImageManager.trackedImagesChanged -= OnChanged;
 
+    // Called whenever the tracking status changes
     void OnChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
+        // Handle newly added tracked images
         foreach (ARTrackedImage trackedImage in eventArgs.added)
         {
             UpdateImage(trackedImage);
         }
 
+        // Handle newly added tracked images
         foreach (ARTrackedImage trackedImage in eventArgs.updated)
         {
+            // Update tracked image if fully tracked
             if (trackedImage.trackingState == UnityEngine.XR.ARSubsystems.TrackingState.Tracking)
             {
-                UpdateImage(trackedImage);
+                UpdateImage(trackedImage);  
             }
+
+            // Deactivate prefab if tracking is lost
             else if (trackedImage.trackingState == UnityEngine.XR.ARSubsystems.TrackingState.None || 
                      trackedImage.trackingState == UnityEngine.XR.ARSubsystems.TrackingState.Limited)
             {
@@ -59,18 +71,26 @@ public class DetectImage : MonoBehaviour
             }
         }
 
-        CheckForTrackedImages();
+        CheckForTrackedImages();    // Update UI based on tracking status
     }
 
+    // Updates the UI and places the prefab corresponding to the tracked image
     void UpdateImage(ARTrackedImage trackedImage)
     {
+        // Display the name of the tracked image in the UI
         imageNameText.text = trackedImage.referenceImage.name;
+
+        // Place the corresponding prefab at the location of the tracked image
         PlacePrefab(trackedImage.referenceImage.name, trackedImage.transform);
     }
 
+    
+    // Checks if any images are currently being tracked and updates the UI accordingly
     void CheckForTrackedImages()
     {
         bool anyTracked = false;
+
+        // Check if any tracked images are active
         foreach (var prefab in trackedImages.Values)
         {
             if (prefab.activeSelf)
@@ -80,12 +100,15 @@ public class DetectImage : MonoBehaviour
             }
         }
 
+        // No images tracked: update UI to show instructions
         if (!anyTracked)
         {
             imageNameText.text = "No image detected";
             ChangeCornersColor(Color.black);
             instructionPanel.SetActive(true);
         }
+
+        // Images are tracked: update UI to indicate success
         else
         {
             ChangeCornersColor(Color.green);
@@ -93,17 +116,21 @@ public class DetectImage : MonoBehaviour
         }
     }
 
+    // Place the prefab corresponding to the tracked image name
     void PlacePrefab(string name, Transform parentTransform) {
         if (trackedImages.ContainsKey(name))
         {
             GameObject prefab = trackedImages[name];
-            prefab.transform.SetParent(parentTransform, true);
+            prefab.transform.SetParent(parentTransform, true);  // Attach to the tracked image's transform
+
+            // Activate the prefab
             prefab.SetActive(true);
-            prefab.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            prefab.transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Adjust rotation to face the user
 
         }
     }
 
+    // Change the color of the corner indicators
     private void ChangeCornersColor(Color color)
     {
         var cornerImages = scanCorners.GetComponentsInChildren<UnityEngine.UI.Image>();
